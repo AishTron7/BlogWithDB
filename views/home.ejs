@@ -1,0 +1,28 @@
+
+<%- include("partials/header"); -%>
+
+<br><br>
+    <h1>Welcome!</h1>
+    <br>
+    <p class="leftStyling"> <%= startingContent %> </p>
+    <br>
+    <a href="/compose"><button class="btn btn-info btn-lg">Compose</button></a>
+    <br><br>
+
+    <div class="col-lg-6">
+      <img class="title-image" src="images/journal.jpg" alt="A person writing something" />
+    </div><br>
+
+  <%  posts.forEach(function(post){ %>
+
+    <h2><%=post.title%></h2>
+    <p>
+    <%=post.content.substring(0, 60) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
